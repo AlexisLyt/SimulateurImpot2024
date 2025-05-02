@@ -166,7 +166,7 @@ public class TestsSimulateur {
         simulateur.setParentIsole( parentIsole );
 
         // Act & Assert
-        assertThrows( IllegalArgumentException.class,  () -> { simulateur.calculImpotSurRevenuNet();} );
+        assertThrows( IllegalArgumentException.class,  () -> simulateur.calculImpotSurRevenuNet());
 
 
     }
