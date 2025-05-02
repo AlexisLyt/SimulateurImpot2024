@@ -170,7 +170,7 @@ public class Simulateur {
         System.out.println( "Revenu net declarant2 : " + revNetDecl2);
         System.out.println( "Situation familiale : " + sitFam.name() );
 
-        // Abattement
+       /* // Abattement
         // EXIGENCE : EXG_IMPOT_02
         double tAbt = 0.1;
         long abt1 = Math.round(revNetDecl1 * tAbt);
@@ -199,7 +199,7 @@ public class Simulateur {
         }
 
         abt = abt1 + abt2;
-        System.out.println( "Abattement : " + abt );
+        System.out.println( "Abattement : " + abt );*/
 
         // revenu fiscal de référence
         double rFRef = revNetDecl1 + revNetDecl2 - abt;
