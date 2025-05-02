@@ -20,6 +20,6 @@ public class CalculateurTranche {
                 break;
             }
         }
-        return Math.round(impot);
+        return impot;
     }
 }

@@ -21,7 +21,7 @@ package com.kerware.simulateur;
  *  L'auteur n'a pas fourni de tests unitaires.
  **/
 
-public class Simulateur {
+public class Simulateur_A_SUPPRIMER {
 
 
     private final int[] limites = new int[6];

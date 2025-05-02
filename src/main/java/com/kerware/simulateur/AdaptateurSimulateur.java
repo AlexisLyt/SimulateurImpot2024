@@ -2,7 +2,9 @@ package com.kerware.simulateur;
 
 public class AdaptateurSimulateur implements ICalculateurImpot {
 
-    private final Simulateur simulateur = new Simulateur();
+    private final SimulateurImpot simulateurImpot = new SimulateurImpot();
+
+    private double result = 0;
 
     private int revenusNetDecl1 = 0;
     private int revenusNetDecl2 = 0;
@@ -44,21 +46,21 @@ public class AdaptateurSimulateur implements ICalculateurImpot {
 
     @Override
     public void calculImpotSurRevenuNet() {
-         simulateur.calculImpot(revenusNetDecl1, revenusNetDecl2 ,situationFamiliale, nbEnfantsACharge, nbEnfantsSituationHandicap, parentIsole);
+         result = simulateurImpot.calculer(revenusNetDecl1, revenusNetDecl2 ,situationFamiliale, nbEnfantsACharge, nbEnfantsSituationHandicap, parentIsole);
     }
 
     @Override
     public int getAbattement() {
-        return (int)simulateur.getAbattement();
+        return (int)simulateurImpot.getAbattement();
     }
 
     @Override
     public double getNbPartsFoyerFiscal() {
-        return simulateur.getNbParts();
+        return simulateurImpot.getNbPartsFoyer();
     }
 
     @Override
     public int getImpotSurRevenuNet() {
-        return (int)simulateur.getImpotNet();
+        return (int)result;
     }
 }
