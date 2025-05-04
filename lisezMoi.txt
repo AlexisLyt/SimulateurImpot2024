@@ -1,0 +1,36 @@
+Projet SimulateurImpot 2024
+
+Ce projet, suivi en cours de qualité de développement, permet de calculer de manière simplifiée les impôts en France en 2024.
+Initialiement,le code fourni tenait dans une seule classe et deux fonctions. Notre tâche, était de le ré-usiner afin d'améliorer sa qualité.
+Nous devions aussi nous assurer que notre nouveau code passait les tests initiaux, qu'il présentait une couverture de plus de 90% 
+et qu'il respectait les règles Checkstyles définies préalablement.
+
+Explication du procédé de réusinage:
+
+Premièrement, nous avons divisé, par fonctionnalités, la classe initiale en plusieurs autres classes.
+Nous avons obtenu ainsi les classes suivantes : 
+
+-CalculateurAbattement qui calcule l'abattement en fonction du revenu net du ou des déclarants
+-CalculateurDecote qui calcule la décote en fonction du montant de l'impôt et de la situation familiale
+-CalculateurPart qui calcule les parts d'un foyer fiscal selon la sitaution familiale du déclarant
+-CalculateurTranche qui calcule le montant de l'impôt des déclarants selon la tranche auquel il appartient.
+-SimulateurImpôt qui coordonne les autres classes afin de calculer l'impot.
+
+De cette façon, chaque classe est responsable d'un aspect différent du calcul de l'impôt.
+
+Nous avons ensuite amélioré la lisibilité du code en donnant des noms clairs et explicites aux variables et en le réorganisant.
+
+Troisièmement, nous avons remplacé les nombres "magiques" dans le code par des attributs de classe "private final" afin que ces constantes
+soient clairement identifiables et facilement modifiables.
+
+En ce qui concerne l'aspect des tranches d'impositions, nous avons choisi de représenter chacune d'elles sous forme de "record".
+Nous avons jugé que comme une tranche est définie par 3 constantes, son minimum, son maximum et son taux d'imposition,
+ nous pourrions les représenter facilement, de manière immuable, sous forme de records. Cette structure se nomme TrancheImposition.
+De plus, nous avons aussi choisi de représenter les tranches d'imposition de la contribution exceptionnelle sur les hauts revenus sous cette forme.
+Nous avons donc crée 3 listes de record TrancheImposition dans une classe "Bareme", deux pour les CEHR et une pour les tranches d'impositions.
+
+Quatrièmement, nous avons réalisé une fonction dans SimulateurImpot qui gènere des exceptions en cas d'éntrée de valeurs illégales 
+en paramètre de la fonction calculer du simulateur.
+
+Enfin, nous avons commenté le code et relié les différentes fonctionnalités eux exigences correspondantes.
+
